@@ -1,15 +1,17 @@
-package soal_6_BigNumber;
+package PRAKTIK.w3;
 import java.util.*;
-import java.math.BigInteger;
+import java.math.*;
 
 public class soal6 {
-    public static void main (String[] args) {
-        Scanner x = new Scanner(System.in);
-        String a =  x.nextLine();
-        String b =  x.nextLine();
-        BigInteger n1 = new BigInteger(a);
-        BigInteger n2 = new BigInteger(b);
-        System.out.println(n1.add(n2));
-        System.out.println(n1.multiply(n2));
+
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String numOne = sc.nextLine();
+            String numTwo = sc.nextLine();
+            BigInteger bigNumOne = new BigInteger(numOne);
+            BigInteger bigNumTwo = new BigInteger(numTwo);
+            System.out.println(bigNumOne.add(bigNumTwo));
+            System.out.println(bigNumOne.multiply(bigNumTwo));
+        }
     }
 }

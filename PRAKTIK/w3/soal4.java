@@ -1,37 +1,27 @@
 package PRAKTIK.w3;
-import java.util.*;
+import java.util.Scanner;
 
 public class soal4 {
-    public static void main(String[] args) {
-    	Scanner input = new Scanner(System.in);
-		
-	double Gaji = 500000;
-	double bonus;
-		
-	System.out.print("Laporan Penjualan : ");
-	int item = input.nextInt();
-	System.out.println("Jumlah item yang terjual : " + item );
-		
-	if(item >= 40){
-            bonus = 50000 * 0.25;
-            System.out.println("Bonus yang diterima : " + (int)bonus);
-            System.out.println("Total Gaji : " + (int)((bonus * item) + Gaji));
+	public static void main(String[] args) {
+		double gaji = 500000;
+		double bonus;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Jumlah Penjualan: ");
+		int penjualan = sc.nextInt();
+		sc.close();
+		if(penjualan >= 80) {
+			bonus = 0.35 * (penjualan*50000);
+			gaji = gaji + bonus;
+		}else if(penjualan >= 40) {
+			bonus = 0.25 * (penjualan*50000);
+			gaji = gaji + bonus;
+		}else if(penjualan < 15) {
+			bonus = 0.15 * ((15-penjualan)*50000);
+			gaji = gaji - bonus;
+		}else {
+			bonus = 0.10 * (penjualan*50000);
+			gaji = gaji + bonus;
+		}
+		System.out.println(gaji);
 	}
-        else if (item > 80 ) {
-            bonus = 50000 * 0.35;
-            System.out.println("Bonus yang diterima : " + (int)bonus);
-            System.out.println("Total Gaji : " + (int)((bonus * item) + Gaji));
-	}
-	else if (item < 15) {
-            bonus = 50000 * 0.15;
-            item = 15 - item;
-            System.out.println("Pemotongan gaji : " + (int)bonus);
-            System.out.println("Total Gaji : " + (int)(Gaji - (bonus * item)));
-	}
-        else {
-            bonus = 50000 * 0.1 ;
-            System.out.println("Total gaji : " + (int)((bonus * item) + Gaji));
-	}
-
-    }
 }
