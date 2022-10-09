@@ -1,13 +1,10 @@
-package PRAKTIK.w5.Kasus1;
+package PRAKTIK.w5.Kasus2;
 
-//Sesuai dengan class design hint yaitu
-//"Break up classes that have too many responsibilities"
-//Dimana lebih baik dibuat class baru untuk atribut makanan
 public class Makanan {
     // Sesuai dengan class Design hint yaitu "Always keep data private"
-    private String[] nama_makanan;
-    private double[] harga_makanan;
-    private int[] stok;
+    private final String[] nama_makanan;
+    private final double[] harga_makanan;
+    private final int[] stok;
 
     // Sesuai dengan di buku yaitu selalu inisiasi data
     Makanan() {
@@ -40,4 +37,8 @@ public class Makanan {
         this.stok[id] = stok;
     }
 
+    // Ditambah Attribut removestock
+    public void removeStok(int id, int jumlah) {
+        this.stok[id] -= jumlah;
+    }
 }
